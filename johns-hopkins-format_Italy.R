@@ -53,7 +53,7 @@ x_confirmed <- x %>%
   .[,c(1:4, 4 + order(as.Date(names(.)[-c(1:4)],format="%m/%d/%Y")))]
 
 
-readr::write_csv(x_confirmed, "docs/time_series_19-covid-Confirmed_Italy.csv")
+readr::write_csv(x_confirmed, "spreadsheets/time_series_19-covid-Confirmed_Italy.csv")
 
 x_deaths <- x %>%
   select(-dimessi_guariti, -totale_casi) %>%
@@ -64,10 +64,10 @@ x_deaths <- x %>%
   slice_head() %>%
   .[,c(1:4, 4 + order(as.Date(names(.)[-c(1:4)],format="%m/%d/%Y")))]
 
-readr::write_csv(x_deaths, "docs/time_series_19-covid-Deaths_Italy.csv")
+readr::write_csv(x_deaths, "spreadsheets/time_series_19-covid-Deaths_Italy.csv")
 
 x_recovered <- x %>%
   select(-deceduti, -totale_casi) %>%
   tidyr::pivot_wider(id_cols = c(`Province/State`, `Country/Region`,  "Lat", "Long"), names_from = data, values_from = dimessi_guariti) %>% mutate_all(funs(tidyr::replace_na(.,0)))
 
-readr::write_csv(x_recovered, "docs/time_series_19-covid-Recovered_Italy.csv")
+readr::write_csv(x_recovered, "spreadsheets/time_series_19-covid-Recovered_Italy.csv")
