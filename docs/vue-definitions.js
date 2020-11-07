@@ -428,9 +428,9 @@ let app = new Vue({
       if (selectedRegion != 'US') {
         let url;
         if (selectedData == 'casi positivi') {
-         url = "https://raw.githubusercontent.com/AnthonyEbert/ItalyCovid19/master/johns-hopkins-format/time_series_19-covid-Confirmed_Italy.csv";
+         url = "https://raw.githubusercontent.com/AnthonyEbert/SpaghettiPlot/main/spreadsheets/time_series_19-covid-Confirmed_Italy.csv";
         } else if (selectedData == 'deceduti') {
-         url = "https://raw.githubusercontent.com/AnthonyEbert/ItalyCovid19/master/johns-hopkins-format/time_series_19-covid-Deaths_Italy.csv";
+         url = "https://raw.githubusercontent.com/AnthonyEbert/SpaghettiPlot/main/spreadsheets/time_series_19-covid-Deaths_Italy.csv";
         } else {
           return;
         }
